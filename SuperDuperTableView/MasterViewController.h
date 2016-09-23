@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MasterViewController.h
 //  SuperDuperTableView
 //
 //  Created by Shahin on 2016-09-22.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
-

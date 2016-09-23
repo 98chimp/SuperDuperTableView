@@ -1,26 +1,164 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pMg-EJ-6SZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Horses of the World-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="Horses of the World" id="BYZ-38-t0r" customClass="MasterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yXr-bv-BRj">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="horseCell" rowHeight="142" id="336-HB-mSZ" customClass="HorseTableViewCell">
+                                        <rect key="frame" x="0.0" y="92" width="414" height="142"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="336-HB-mSZ" id="WCf-n6-Q0S">
+                                            <frame key="frameInset" width="381" height="141.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horse" translatesAutoresizingMaskIntoConstraints="NO" id="jka-gD-QDW">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="151" id="Wjg-mi-P2v"/>
+                                                        <constraint firstAttribute="height" constant="128" id="had-4h-ffi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horse's Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd1-ba-HeS">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="69" id="4w3-NR-eIn"/>
+                                                        <constraint firstAttribute="width" priority="750" constant="200" id="Qb4-nf-H8I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-lM-mhA">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="XCd-P3-m0a"/>
+                                                        <constraint firstAttribute="width" priority="750" constant="200" id="hly-x8-4zy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jka-gD-QDW" firstAttribute="leading" secondItem="WCf-n6-Q0S" secondAttribute="leading" constant="8" id="590-Tf-Ry1"/>
+                                                <constraint firstItem="sx5-lM-mhA" firstAttribute="leading" secondItem="jka-gD-QDW" secondAttribute="trailing" constant="8" id="F5H-Bs-Njh"/>
+                                                <constraint firstItem="sx5-lM-mhA" firstAttribute="bottom" secondItem="WCf-n6-Q0S" secondAttribute="bottomMargin" id="Ods-H5-3sP"/>
+                                                <constraint firstItem="jka-gD-QDW" firstAttribute="top" secondItem="WCf-n6-Q0S" secondAttribute="top" constant="6" id="QJf-XI-Ege"/>
+                                                <constraint firstItem="kd1-ba-HeS" firstAttribute="leading" secondItem="jka-gD-QDW" secondAttribute="trailing" constant="8" id="R50-Qb-Neg"/>
+                                                <constraint firstItem="sx5-lM-mhA" firstAttribute="trailing" secondItem="WCf-n6-Q0S" secondAttribute="trailingMargin" id="TPx-vT-igY"/>
+                                                <constraint firstItem="kd1-ba-HeS" firstAttribute="trailing" secondItem="WCf-n6-Q0S" secondAttribute="trailingMargin" id="V1s-F4-8Yl"/>
+                                                <constraint firstItem="kd1-ba-HeS" firstAttribute="top" secondItem="WCf-n6-Q0S" secondAttribute="topMargin" id="dcK-Z6-RRv"/>
+                                                <constraint firstAttribute="bottom" secondItem="jka-gD-QDW" secondAttribute="bottom" constant="7" id="wY8-dl-kVC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="horseImageView" destination="jka-gD-QDW" id="Fbe-mb-q6i"/>
+                                            <outlet property="horseNameLabel" destination="kd1-ba-HeS" id="Fhr-LX-qVX"/>
+                                            <outlet property="horseSepciesLabel" destination="sx5-lM-mhA" id="LIj-d1-wtw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yXr-bv-BRj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FCR-rF-V69"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yXr-bv-BRj" secondAttribute="bottom" id="W7f-2K-4aw"/>
+                            <constraint firstItem="yXr-bv-BRj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="baV-VO-J2m"/>
+                            <constraint firstAttribute="trailing" secondItem="yXr-bv-BRj" secondAttribute="trailing" id="qOT-cR-3VB"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Horses" id="Lyd-1L-eqM"/>
+                    <connections>
+                        <outlet property="horsesTableView" destination="yXr-bv-BRj" id="Lds-xE-VMs"/>
+                        <segue destination="oIB-mI-QcK" kind="show" identifier="toHorseDetail" id="SVr-M9-UkA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="-42.728635682158924"/>
+        </scene>
+        <!--More about Horses-->
+        <scene sceneID="cWC-dJ-lib">
+            <objects>
+                <viewController title="More about Horses" id="oIB-mI-QcK" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wgY-o0-UAv"/>
+                        <viewControllerLayoutGuide type="bottom" id="pqU-nA-HyE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="As4-dN-aR1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horse" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-dI-pyA">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ioi-dI-pyA" secondAttribute="height" multiplier="1:1" id="70C-AN-XJ9"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Rh-Jm-LHy">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ioi-dI-pyA" firstAttribute="top" secondItem="wgY-o0-UAv" secondAttribute="bottom" constant="8" id="3Tr-af-oYk"/>
+                            <constraint firstItem="ioi-dI-pyA" firstAttribute="trailing" secondItem="As4-dN-aR1" secondAttribute="trailingMargin" id="9d1-CQ-RFx"/>
+                            <constraint firstItem="ioi-dI-pyA" firstAttribute="leading" secondItem="As4-dN-aR1" secondAttribute="leadingMargin" id="MLM-7H-5ZF"/>
+                            <constraint firstItem="4Rh-Jm-LHy" firstAttribute="leading" secondItem="As4-dN-aR1" secondAttribute="leadingMargin" id="VMb-jm-yhP"/>
+                            <constraint firstItem="4Rh-Jm-LHy" firstAttribute="top" secondItem="ioi-dI-pyA" secondAttribute="bottom" constant="8" id="egW-lW-5xs"/>
+                            <constraint firstItem="4Rh-Jm-LHy" firstAttribute="trailing" secondItem="As4-dN-aR1" secondAttribute="trailingMargin" id="lvh-fQ-XBc"/>
+                            <constraint firstItem="pqU-nA-HyE" firstAttribute="top" secondItem="4Rh-Jm-LHy" secondAttribute="bottom" constant="15" id="vsf-1o-Lfy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="4Rh-Jm-LHy" id="Uzq-Xy-baT"/>
+                        <outlet property="horseImageView" destination="ioi-dI-pyA" id="Ek3-vp-HNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwV-eQ-w5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1512" y="-43"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tyP-QJ-HsM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pMg-EJ-6SZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x1Q-ea-A9T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VHG-Kb-LxJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcZ-te-dyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="-43"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="horse" width="75" height="69"/>
+    </resources>
 </document>
